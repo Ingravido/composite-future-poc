@@ -2,7 +2,7 @@
 POC using vertex's compositeFuture feature to perform Futures in parallel
 
 ## Context
-We wanted sure that two Future promises are triggered at the same time. For a certain test, we have the need to simulate the same interaction with a service like it will have in production environment. Being able to trigger two Futures in parallel will be us the needed confidence with the test.
+We want to ensure that two Future promises are triggered at the same time. For a certain test, we have the need to simulate the same interaction with a service like it will have in production environment. Being able to trigger two Futures in parallel will be us the needed confidence with the test.
 
 ## Proposed solution 
 Leveraging on the `CompositeFuture.all` feature of vert.x the can run several async operations in parallel. 
