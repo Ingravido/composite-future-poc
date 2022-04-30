@@ -26,7 +26,7 @@ public class CompositeFuturePOC extends AbstractVerticle {
     printDateTime("Starting");
 
     CompositeFuture.all(
-      doAsyncCall(5), //Each of this makes a vertex http request that takes 5seconds to complete
+      doAsyncCall(5), //Each of this makes a vertex http request that takes 5seconds to complete,
       doAsyncCall(5),
       doAsyncCall(5),
       doAsyncCall(5),
@@ -42,7 +42,7 @@ public class CompositeFuturePOC extends AbstractVerticle {
   }
 
   private Future<JsonObject> doAsyncCall(int delay) {
-    String hostName = "35.169.55.235"; // https://httpbin.org/ Using domain name there is a real nasty bug in vertex with DNS resolve in OSX which was making the main thread to block! so using IP of httpbin.org
+    String hostName = "35.169.55.235"; // https://httpbin.org/ Using domain name instead the IP triggers real nasty bug in vertex with DNS resolve in OSX which was making the main thread to block! so using IP of httpbin.org
     String path = "/delay/" + delay; // Delays the response x seconds
     String hostAndPath = hostName + path;
     printDateTime("Calling " + hostAndPath);
