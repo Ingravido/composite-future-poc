@@ -48,7 +48,7 @@ Depending on SO, CPU and external factors, they take around 10 seconds to comple
 ## Running the POC
 `mvn exec:java`
 
-## Comments and this to avoid
+## Comments and things to avoid
 The idea in our test is to the same we do with http request but with the async call to the service under test.
 
 Using domain name on the http call instead of IP address, we were ending up with the main thread being blocked due to an error related with DNS resolve on OSX.  
